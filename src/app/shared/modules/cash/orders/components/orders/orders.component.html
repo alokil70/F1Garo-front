@@ -1,0 +1,7 @@
+<div *ngIf="isLoading$ | async" class="center">Loading...</div>
+<div *ngIf="error$ | async" class="center">Error...</div>
+<div *ngIf="orders$ | async" class="wrapper">
+    <div class="block3rows">
+        <app-orders-item *ngFor="let order of (orders$ | async)?.orders" [card_props]="order"> </app-orders-item>
+    </div>
+</div>

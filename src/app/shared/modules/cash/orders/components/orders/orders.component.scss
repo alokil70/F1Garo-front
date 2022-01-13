@@ -1,0 +1,27 @@
+.wrapper {
+    margin: 5px;
+}
+.card {
+    border: 1px solid #5d6692;
+    background: #c1c1c1;
+    display: flex;
+    justify-content: space-around;
+}
+.block2rows {
+    height: 40vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-rows: repeat(2, minmax(90px, auto));
+    grid-auto-rows: 90px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.block3rows {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, minmax(300px, auto));
+    grid-auto-rows: minmax(300px, auto);
+    column-gap: 10px;
+    row-gap: 10px;
+}

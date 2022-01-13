@@ -1,0 +1,37 @@
+.card {
+    height: 100%;
+    background-color: #5d6692;
+    color: white;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 2px;
+    row-gap: 2px;
+    justify-items: center;
+    align-items: center;
+    &:hover {
+        background-color: #dc3545;
+    }
+}
+.green {
+    background-color: #28a745;
+}
+.grey {
+    background-color: grey;
+}
+.pink {
+    background-color: pink;
+}
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+.total {
+    border-radius: 50%;
+    background-color: rgba(180, 100, 100, 0.5);
+    padding: 2px 10px 2px 10px;
+    font-size: 22px;
+}

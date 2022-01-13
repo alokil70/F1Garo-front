@@ -1,0 +1,14 @@
+<div class="card" [class]="card_props.background">
+    <div class="fz40">{{ card_props.num }}</div>
+    <div>{{ card_props.createdAt | date: 'hh:mm' }}</div>
+    <div>
+        <div class="total">{{ card_props.total }}</div>
+    </div>
+    <div>{{ card_props.table }} стол</div>
+    <div>{{ card_props.position }}</div>
+    <div>{{ card_props.title }}</div>
+    <div>{{ card_props.title }}</div>
+    <div *ngIf="card_props.opened">пречек</div>
+    <div *ngIf="!card_props.opened"></div>
+    <div class="total">{{ card_props.payed ? '' : 'не' }} оплачен</div>
+</div>

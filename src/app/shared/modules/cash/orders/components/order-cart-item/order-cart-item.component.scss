@@ -1,0 +1,11 @@
+.col3 {
+    align-content: start;
+    color: #5677a5;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 2px;
+    row-gap: 2px;
+    justify-items: center;
+    align-items: center;
+}
