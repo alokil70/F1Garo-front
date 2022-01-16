@@ -1,6 +1,6 @@
 <div class="col3">
     <div>{{ props.quantity }}</div>
-    <div>
+    <div class='w100vw'>
         <div *ngIf="item">{{ item.name }}</div>
     </div>
     <div *ngIf="item">{{ item.price * props.quantity }}</div>

@@ -10,6 +10,9 @@ import { InitialState } from './shared/state/initial-state/initial.state';
 import { NgxsModule } from '@ngxs/store';
 import { InitialStateService } from './shared/state/initial-state/initial-state.service';
 import { AppRoutingModule } from './app-routing.module';
+import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
+import { BottomBarModule } from './shared/modules/bottom-bar/bottom-bar.module';
+import { ListOrdersModule } from './list-orders/list-orders.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -22,7 +25,10 @@ import { AppRoutingModule } from './app-routing.module';
         // NgxsLoggerPluginModule.forRoot(),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         HttpClientModule,
-        OrderCreateModule
+        ListOrdersModule,
+        OrderCreateModule,
+        TopBarModule,
+        BottomBarModule
     ],
     providers: [InitialStateService],
     bootstrap: [AppComponent]

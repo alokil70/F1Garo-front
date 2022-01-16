@@ -4,10 +4,8 @@ import { OrderCreateComponent } from './components/order-create/order-create.com
 import { RouterModule } from '@angular/router';
 import { ProductsModule } from '../shared/modules/cash/products/products.module';
 import { OrdersModule } from '../shared/modules/cash/orders/orders.module';
-import { TopBarModule } from '../shared/modules/top-bar/top-bar.module';
-import { BottomBarModule } from '../shared/modules/bottom-bar/bottom-bar.module';
 
-const route = [
+const routes = [
     {
         path: 'cash/order',
         component: OrderCreateComponent
@@ -15,6 +13,6 @@ const route = [
 ];
 @NgModule({
     declarations: [OrderCreateComponent],
-    imports: [CommonModule, RouterModule.forChild(route), TopBarModule, BottomBarModule, OrdersModule, ProductsModule]
+    imports: [CommonModule, RouterModule.forChild(routes), OrdersModule, ProductsModule]
 })
 export class OrderCreateModule {}
