@@ -1,1 +1,9 @@
 <div class="e03vm0ha block"><img class="e0kf3i9u" srcset="asset/image/rectangle-4.png 1x, asset/image/rectangle-4@2x.png 2x, asset/image/rectangle-4@3x.png 3x"></div>
+<div class="e0ko17uh block">
+    <div style='color: #00bcd5' *ngFor="let item of orders$ | async; let i = index">
+        <p>{{ item.id }}</p>
+        <p>{{ item.createdAt }}</p>
+        <p *ngIf='item.order'>{{ item.order[0].id }}</p>
+        <p *ngIf='item.order'>{{ item.order[0].quantity }}</p>
+    </div>
+</div>

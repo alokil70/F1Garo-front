@@ -8,6 +8,7 @@ import { OrderCartItemComponent } from './components/order-cart-item/order-cart-
 import { NgxsModule } from '@ngxs/store';
 import { CartState } from './state/cart.state';
 import { ListUserOrdersComponent } from './components/list-user-orders/list-user-orders.component';
+import { OrderState } from './state/order.state';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,7 @@ import { ListUserOrdersComponent } from './components/list-user-orders/list-user
         OrderCartItemComponent,
         ListUserOrdersComponent
     ],
-    imports: [CommonModule, NgxsModule.forFeature([CartState])],
+    imports: [CommonModule, NgxsModule.forFeature([CartState, OrderState])],
     exports: [OrdersComponent, OrdersItemComponent, OrderCartComponent, ListUserOrdersComponent],
     providers: [OrdersService]
 })

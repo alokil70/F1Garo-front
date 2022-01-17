@@ -1,61 +1,68 @@
 import { Action, Selector, State, StateContext } from '@ngxs/store';
-import { CartInterface } from '../types/cart.interface';
 import { Injectable } from '@angular/core';
-import { updateItem } from '@ngxs/store/operators';
 import { InitialState } from '../../../../state/initial-state/initial.state';
+import { ICart, ICartItem } from '../../../../models/cart.model';
+import { append, patch, updateItem } from '@ngxs/store/operators';
 
 export class AddToCart {
     static type = '[CART] AddToCart';
-
-    constructor(public readonly payload: CartInterface) {}
+    constructor(public readonly payload: ICartItem) {}
 }
 
 export class UpdateItem {
     static type = '[CART] UpdateItem';
-
-    constructor(public readonly payload: CartInterface) {}
+    constructor(public readonly payload: ICartItem) {}
 }
 
 export class RemoveItem {
     static type = '[CART] RemoveItem';
-
     constructor(public readonly payload: number) {}
 }
 
-@State<CartInterface[]>({
+@State<ICart>({
     name: 'cart',
-    defaults: []
+    defaults: {
+        cart: []
+    }
 })
 @Injectable()
 export class CartState {
     @Selector([InitialState.getProducts])
-    static getCart(state: CartState, initialState: InitialState) {
+    static getCart(state: ICart, initialState: InitialState) {
         const prod = initialState;
-        console.log('products', prod);
-        return state;
+        console.log('state.cart', state.cart);
+        return state.cart;
     }
 
     @Action(AddToCart)
-    addToCart({ getState, setState }: StateContext<CartInterface[]>, { payload }: AddToCart) {
-        if (getState().some(item => item.id === payload.id)) {
-            getState().forEach(item => {
+    addToCart(ctx: StateContext<ICart>, { payload }: AddToCart) {
+        if (ctx.getState().cart.some(item => item.id === payload.id)) {
+            ctx.getState().cart.forEach(item => {
                 if (item.id === payload.id) {
                     const newItem = {
                         ...item
                     };
                     newItem.quantity++;
-                    setState(updateItem(i => i?.id === payload.id, newItem));
+                    ctx.setState(
+                        patch({
+                            cart: updateItem(i => i?.id === payload.id, newItem)
+                        })
+                    );
                 }
             });
         } else {
-            setState([...getState(), payload]);
+            ctx.setState(
+                patch({
+                    cart: append([payload])
+                })
+            );
         }
     }
 
     @Action(UpdateItem)
-    updateItem({ getState, setState }: StateContext<CartInterface[]>, { payload }: UpdateItem) {
+    updateItem({ getState, setState }: StateContext<ICartItem[]>, { payload }: UpdateItem) {
         console.log('update payload', payload);
-        const newState: CartInterface[] = [];
+        const newState: ICartItem[] = [];
         getState().forEach(item => {
             if (item.id === payload.id) {
                 item.quantity = payload.quantity;
@@ -66,7 +73,7 @@ export class CartState {
     }
 
     @Action(RemoveItem)
-    removeItem({ getState, setState }: StateContext<CartInterface[]>, { payload }: RemoveItem) {
+    removeItem({ getState, setState }: StateContext<ICartItem[]>, { payload }: RemoveItem) {
         setState(getState().filter((item, i) => i !== payload));
     }
 }

@@ -1,28 +1,34 @@
-import { IAddress } from './address';
+//import { IAddress } from './address';
+
+import { ICartItem } from './cart.model';
 
 export interface IOrderToCreate {
     basketId: string;
     deliveryMethodId: number;
-    shipToAddress: IAddress;
+    //shipToAddress: IAddress;
 }
 
 export interface IOrder {
-    id: number;
+    order: IOrderItem[];
+    /*id: number;
     buyerEmail: string;
     orderDate: string;
     shipToAddress: IAddress;
+    orderItems: IOrderItem[];
     deliveryMethod: string;
     shippingPrice: number;
-    orderItems: IOrderItem[];
     subtotal: number;
     status: string;
-    total: number;
+    total: number;*/
 }
 
 export interface IOrderItem {
-    productId: number;
+    id: number;
+    order: ICartItem[];
+    createdAt: Date;
+    /*productId: number;
     productName: string;
     pictureUrl: string;
     price: number;
-    quantity: number;
+    quantity: number;*/
 }
