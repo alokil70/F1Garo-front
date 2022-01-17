@@ -1,8 +1,7 @@
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { Injectable } from '@angular/core';
 import { InitialState } from '../../../../state/initial-state/initial.state';
-import { ICart, ICartItem } from '../../../../models/cart.model';
-import { append, patch, updateItem } from '@ngxs/store/operators';
+import { append, patch } from '@ngxs/store/operators';
 import { IOrder, IOrderItem } from '../../../../models/order.model';
 
 export class SaveOrder {
