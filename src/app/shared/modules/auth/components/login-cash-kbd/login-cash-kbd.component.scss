@@ -1,0 +1,16 @@
+.keys {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(55px, 1fr));
+	grid-template-rows: repeat(4, minmax(55px, auto));
+	gap: 5px;
+	button {
+		font-size: 18px;
+		height: 100%;
+		width: 100%;
+		background-color: #c1c1c1;
+		border: none;
+		&:hover {
+			background-color: lightslategray;
+		}
+	}
+}

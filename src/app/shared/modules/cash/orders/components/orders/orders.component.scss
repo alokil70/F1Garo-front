@@ -1,9 +1,17 @@
+.orders_items {
+    display: grid;
+    margin-top: 3px;
+    margin-left: 3px;
+    align-content: start;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 3px;
+}
+
 .e07q657r {
     grid-auto-flow: column;
     height: 275px;
     justify-content: start;
 }
-
 
 .e004vsjy {
     align-content: start;
@@ -38,7 +46,7 @@
 }
 
 .e0s58c5g {
-    background-image: url("~src/assets/image/rectangle-40.png");
+    background-image: url('~src/assets/image/rectangle-40.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,7 +59,7 @@
     width: 45px;
 }
 
-.e0eccfab {
+/* .e0eccfab {
     align-content: start;
     height: 20px;
     margin-top: 1px;
@@ -151,7 +159,7 @@
 
 .e0lnhc2i {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -181,7 +189,7 @@
 
 .e084tzk3 {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -217,7 +225,7 @@
 
 .e0pfose5 {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -245,7 +253,7 @@
 }
 
 .e022uaws {
-    background-image: url("~src/assets/image/rectangle-40.png");
+    background-image: url('~src/assets/image/rectangle-40.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -358,7 +366,7 @@
 
 .e09ez51w {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -388,7 +396,7 @@
 
 .e0u81umb {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -424,7 +432,7 @@
 
 .e00vqf98 {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -454,7 +462,7 @@
 
 .e0o23887 {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -484,7 +492,7 @@
 
 .e00kbpww {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -514,7 +522,7 @@
 
 .e03sy9zo {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -530,4 +538,4 @@
     margin-left: 17px;
     margin-top: 20px;
     width: 30px;
-}
+} */

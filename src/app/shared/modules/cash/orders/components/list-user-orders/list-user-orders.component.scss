@@ -1,0 +1,26 @@
+.list_users {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    height: 70px;
+    margin-top: 6px;
+    margin-left: 10px;
+    background-color: white;
+}
+
+.item_number {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    background-color: white;
+}
+
+.item_name {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.3em;
+    background-color: rgb(159, 206, 131);
+}

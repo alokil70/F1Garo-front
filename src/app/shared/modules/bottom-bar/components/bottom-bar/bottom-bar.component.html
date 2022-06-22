@@ -1,9 +1,8 @@
-<div class="e0n7uco0 block"></div>
-<div class="e0tqa88n block">
-    <svg class="e007c79i" viewBox="0 0 47 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-            d="M47 15.275H11.2506L27.6712 3.07682L23.5 0L0 17.4571L23.5 34.9143L27.6419 31.8375L11.2506 19.6393H47V15.275Z"
-            fill="white"
-        ></path>
-    </svg>
+<div class="bottom_bar">
+    <div class="bottom_bar__left">
+        <app-button [title]="btn" img="{{ img }}" (press)="saveOrder()"></app-button>
+    </div>
+    <div class="bottom_bar__right">
+        <app-button [title]="btn3" img="{{ img }}" (press)="getOrder()"></app-button>
+    </div>
 </div>

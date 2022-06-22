@@ -1,10 +1,25 @@
+.top_bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-image: linear-gradient(rgb(254, 254, 254) 0%, rgb(254, 254, 254) 100%);
+    height: 90px;
+    width: 100vw;
+    &__left {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        justify-content: start;
+    }
+    &__right {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        justify-content: end;
+    }
+}
+
 .e0f23bgz {
     background-image: linear-gradient(rgb(254, 254, 254) 0%, rgb(254, 254, 254) 100%);
-    grid-auto-flow: column;
     height: 90px;
-    justify-content: start;
     margin-top: 20px;
-    width: 1440px;
 }
 
 .e0ngigia {
@@ -33,7 +48,7 @@
 .e0wh5snu {
     align-content: start;
     height: 55px;
-    margin-left: 206px;
+    margin-left: 6px;
     margin-top: 18px;
     width: 64px;
 }

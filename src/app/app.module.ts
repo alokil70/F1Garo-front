@@ -1,3 +1,6 @@
+import { OfficeModule } from './office/office.module';
+import { AuthModule } from './shared/modules/auth/auth.module';
+import { ButtonModule } from './shared/modules/button/button.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
 import { BottomBarModule } from './shared/modules/bottom-bar/bottom-bar.module';
 import { ListOrdersModule } from './list-orders/list-orders.module';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 @NgModule({
     declarations: [AppComponent],
@@ -22,13 +26,19 @@ import { ListOrdersModule } from './list-orders/list-orders.module';
         NgxsModule.forRoot([InitialState], {
             developmentMode: !environment.production
         }),
+        NgxsStoragePluginModule.forRoot({
+            key: 'auth.token'
+        }),
         // NgxsLoggerPluginModule.forRoot(),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         HttpClientModule,
+        AuthModule,
+        OfficeModule,
         ListOrdersModule,
         OrderCreateModule,
         TopBarModule,
-        BottomBarModule
+        BottomBarModule,
+        ButtonModule
     ],
     providers: [InitialStateService],
     bootstrap: [AppComponent]

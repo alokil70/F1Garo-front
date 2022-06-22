@@ -1,3 +1,25 @@
+.order_cart {
+    &__back {
+        position: absolute;
+    }
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 1.1em;
+        margin: 10px;
+    }
+}
+.box {
+    margin-bottom: 1px;
+    background-color: yellowgreen;
+}
+.ittt {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+}
+.prodName {
+    margin-left: 2px;
+}
 
 .e0uqsi91 {
     align-content: start;
@@ -9,7 +31,7 @@
 }
 
 .e0dsr345 {
-    background-image: url("~src/assets/image/rectangle-40.png");
+    background-image: url('~src/assets/image/rectangle-40.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -87,6 +109,16 @@
     width: 2px;
 }
 
+.cme9 {
+    align-content: start;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+    height: 265px;
+    margin-left: 4px;
+    margin-top: 3px;
+    width: 232px;
+    background-color: white;
+    border: 1px solid rgb(160, 160, 160);
+}
 
 .e0sycme9 {
     align-content: start;
@@ -96,11 +128,14 @@
     margin-top: 3px;
     width: 232px;
     border: 1px solid rgb(160, 160, 160);
+    &:hover {
+        background: rgba(252, 255, 48, 0.7);
+    }
 }
 
 .e03sy9zo {
     align-content: start;
-    background-image: url("~src/assets/image/ellipse-2-65.svg");
+    background-image: url('~src/assets/image/ellipse-2-65.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

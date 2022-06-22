@@ -4,6 +4,7 @@ import { tap } from 'rxjs';
 import { GetInitialState } from './initial-state.action';
 import { InitialStateService } from './initial-state.service';
 import { InitialStateResponseInterface } from './initial-state-response.interface';
+import { IProds, IProduct } from '../../models/product.model';
 
 @State<InitialStateResponseInterface>({
     name: 'initialState',
@@ -23,8 +24,13 @@ export class InitialState {
     }
 
     @Selector()
-    static getProducts(state: InitialStateResponseInterface) {
+    static getProducts(state: IProduct) {
         return state.products;
+    }
+
+    @Selector()
+    static getProds(state: IProds) {
+        return state.products.products;
     }
 
     @Selector()

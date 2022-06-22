@@ -25,7 +25,7 @@ export interface IOrder {
 export interface IOrderItem {
     id: number;
     order: ICartItem[];
-    createdAt: Date;
+    createdAt?: Date;
     /*productId: number;
     productName: string;
     pictureUrl: string;

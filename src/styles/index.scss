@@ -6,11 +6,4 @@
 // if you want to compile multiple themes to allow the user to switch from one to another,
 // @import './themes/_light.theme';
 
-.w100vw {
-    width: 100%;
-}
-
-.flex {
-    display: flex;
-    justify-content: space-around;
-}
+@import './variables';

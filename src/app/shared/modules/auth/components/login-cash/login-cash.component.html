@@ -1,0 +1,20 @@
+<div class="block">
+    <!-- <form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()" class="form">
+		<small class="p5">Зарегистрируйтесь магнитной картой или кодом с паролем</small>
+
+		<div class="p5">
+			<label>Логин</label>
+			<input formControlName="code" value="{{ code }}" (focus)="codeFocus = true" />
+			<small *ngIf="formGroup.hasError('required', 'code')">обязательное поле</small>
+		</div>
+
+		<div class="p5">
+			<label>Пароль</label>
+			<input formControlName="password" value="{{ pass }}" type="password" (focus)="codeFocus = false" />
+			<small *ngIf="formGroup.hasError('required', 'password')">обязательное поле</small>
+		</div>
+
+	</form> -->
+
+    <app-login-cash-kbd (output)="keyEvent($event)" (formOut)="onFormSubmit()"></app-login-cash-kbd>
+</div>

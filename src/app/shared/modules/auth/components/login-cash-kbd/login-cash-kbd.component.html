@@ -1,0 +1,5 @@
+<div class="keys">
+	<button *ngFor="let key of keys" (click)="output.emit(key)">{{ key }}</button>
+	<button (click)="formSubmit()">Ввод</button>
+	<button>Удл</button>
+</div>

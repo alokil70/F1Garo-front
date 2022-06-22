@@ -9,6 +9,10 @@ export class AddToCart {
     constructor(public readonly payload: ICartItem) {}
 }
 
+export class CleanCart {
+    static type = '[CART] CleanCart';
+}
+
 export class UpdateItem {
     static type = '[CART] UpdateItem';
     constructor(public readonly payload: ICartItem) {}
@@ -30,8 +34,17 @@ export class CartState {
     @Selector([InitialState.getProducts])
     static getCart(state: ICart, initialState: InitialState) {
         const prod = initialState;
-        console.log('state.cart', state.cart);
         return state.cart;
+    }
+
+    @Action(CleanCart)
+    cleanCart(ctx: StateContext<ICart>) {
+        if (ctx.getState().cart.some(item => item.id)) {
+            ctx.setState({
+                cart: []
+            });
+        }
+        return;
     }
 
     @Action(AddToCart)

@@ -1,0 +1,18 @@
+.btn {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-width: var(--btn-min-width);
+    text-transform: uppercase;
+    color: var(--btn-text-color);
+    &:hover {
+        background-color: var(--btn-background-color-hover);
+        color: white;
+    }
+}
+
+svg {
+    color: rgb(155, 116, 116);
+    width: 70px;
+}

@@ -1,0 +1,70 @@
+<p>main works!</p>
+<div class='sidebar'>
+    <div class='e0a2pfu7 block'>
+        <button class='btn e0k3q1s7' (click)='backToRoot()'>
+            <svg class='e007c79i' viewBox='0 0 47 35' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                <path
+                    d='M47 15.275H11.2506L27.6712 3.07682L23.5 0L0 17.4571L23.5 34.9143L27.6419 31.8375L11.2506 19.6393H47V15.275Z'
+                    fill='white'
+                ></path>
+            </svg>
+        </button>
+        <button class='btn e0k3q1s7' (click)='backToRoot()'>
+            <svg class='e05vf9o2' viewBox='0 0 38 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                <path d='M0 10.4396V31.3187H13.5714V18.7912H24.4286V31.3187H38V10.4396L19 0L0 10.4396Z'
+                      fill='white'></path>
+            </svg>
+        </button>
+        <button class='btn e0k3q1s7' (click)='backToRoot()'>
+            <svg class='e0v8birv' viewBox='0 0 36 38' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                <path
+                    d='M0 0V4.15889L19.2111 14.7144V16.8889H24.7V21.1111H19.2111V25.3333H24.7V29.5556H19.2111V38H35.6778V0H0ZM24.7 12.6667H19.2111V8.44444H24.7V12.6667Z'
+                    fill='white'
+                ></path>
+            </svg>
+        </button>
+        <button class='btn e0h9573l'></button>
+    </div>
+    <div class='products_editor_wrapper'>
+        <div class='products_items block'>
+            <div *ngFor='let item of category_tmp' (click)='categorySelect(item)' class='card' [class]='item.name'>
+                <div class='fz40'>{{ item.name }}</div>
+            </div>
+            <div *ngFor='let item of products_tmp' (click)='productSelect(item)' class='card' [class]='productSelected'>
+                <div class='fz40'>{{ item.name }}</div>
+            </div>
+        </div>
+        <div class='products_property_list block'>
+            <div>
+                <div class='products_property_list__row'>
+                    <label>Наименование</label>
+                    <input [value]='product?.name' />
+                </div>
+                <div class='products_property_list__row'>
+                    <label>Цена</label>
+                    <input [value]='product?.price' />
+                </div>
+                <div class='products_property_list__row'>
+                    <label>Описание</label>
+                    <input [value]='product?.description' />
+                </div>
+                <div class='products_property_list__row'>
+                    <label>Категория</label>
+                    <input [value]='product?.category?.name' />
+                </div>
+                <div class='products_property_list__row'>
+                    <label>Создатель</label>
+                    <input [value]='product?.creator' />
+                </div>
+                <div class='products_property_list__row'>
+                    <label>Автор</label>
+                    <input [value]='product?.author' />
+                </div>
+                <div class='products_property_list__row'>
+                    <label>Поле 7</label>
+                    <input [value]='product?.name' />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

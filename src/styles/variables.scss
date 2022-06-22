@@ -1,0 +1,26 @@
+:root {
+    --main-grid-gap: 0.2em;
+    --color-text: red;
+    --color-text-primary: #fff;
+    --color-text-disable: grey;
+    --color-cart-back: #fff;
+    --color-main-back: rgb(63, 65, 64);
+    --color-main-primary-back: rgb(121, 145, 157);
+    --color-main-primary-text: #fff;
+    --color-footer-back: rgb(102, 102, 102);
+
+    --btn-text-color: rgb(218, 218, 218);
+    --btn-color-success: green;
+    --btn-background-color: rgb(230, 255, 132);
+    --btn-background-color-hover: rgb(230, 255, 132);
+
+    --base-color: #c6538c;
+    --border-dark: rgba($base-color, 0.88);
+
+    --btn-min-width: 120px;
+    --cart-grid-gap: var(--main-grid-gap);
+
+    --main-color: #DD2F6E;
+    --color-dark: #1d2231;
+    --text-grey: #8390a2;
+}

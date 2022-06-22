@@ -1,8 +1,12 @@
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { Injectable } from '@angular/core';
-import { InitialState } from '../../../../state/initial-state/initial.state';
-import { append, patch } from '@ngxs/store/operators';
+import { append, patch, updateItem } from '@ngxs/store/operators';
 import { IOrder, IOrderItem } from '../../../../models/order.model';
+
+export class CreateOrder {
+    static type = '[ORDER] CreateOrder';
+    constructor(public readonly payload: IOrderItem) {}
+}
 
 export class SaveOrder {
     static type = '[ORDER] SaveOrder';
@@ -27,18 +31,29 @@ export class RemoveOrder {
 })
 @Injectable()
 export class OrderState {
-    @Selector([InitialState.getProducts])
-    static getOrder(state: IOrder, initialState: InitialState) {
-        const prod = initialState;
-        console.log('state.cart', state.order);
+    @Selector()
+    static getOrder(state: IOrder) {
         return state.order;
     }
 
-    @Action(SaveOrder)
-    SaveOrder(ctx: StateContext<IOrder>, { payload }: SaveOrder) {
+    @Action(CreateOrder)
+    createOrder(ctx: StateContext<IOrder>, { payload }: SaveOrder) {
         ctx.setState(
             patch({
                 order: append([payload])
+            })
+        );
+    }
+
+    @Action(SaveOrder)
+    saveOrder(ctx: StateContext<IOrder>, { payload }: SaveOrder) {
+        const order = ctx.getState().order.find(i => i.id === payload.id);
+        if (order) {
+            console.log('from state saveorder const order', order);
+        }
+        ctx.setState(
+            patch({
+                order: updateItem(i => i?.id === payload.id, payload)
             })
         );
         /*if (ctx.getState().cart.some(item => item.id === payload.id)) {

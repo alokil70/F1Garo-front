@@ -7,9 +7,10 @@ import { OrdersModule } from '../shared/modules/cash/orders/orders.module';
 
 const routes = [
     {
-        path: 'cash/order',
+        path: 'cash/order/:id',
         component: OrderCreateComponent
-    }
+    },
+    { path: '**', redirectTo: '/cash/orders' }
 ];
 @NgModule({
     declarations: [OrderCreateComponent],

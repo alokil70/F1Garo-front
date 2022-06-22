@@ -1,15 +1,23 @@
 {
   "name": "f1-garo-front",
   "version": "0.0.0",
+  "author": "scitechenthusiast",
+  "description": "Demo Angular Electron app",
+  "main": "electron-main.js",
   "scripts": {
     "ng": "ng",
     "prettier": "prettier --write \"**/*.{js,json,css,scss,less,md,ts,html,component.html}\"",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href ./",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "lint_fix": "ng lint --fix"
+    "lint_fix": "ng lint --fix",
+    "electron-start": "electron .",
+    "build-mac": "ng build --prod --base-href ./ && electron-packager . --overwrite --ignore=(\"e2e|node_modules|src|.browserslistrc|.editorconfig|.gitignore|angular.json|karma.conf.js|package-lock.json|README.md|tsconfig.app.json|tsconfig.json|tsconfig.spec.json|tslint.json\") --platform=darwin --arch=x64 --icon=./dist/angular-build/assets/icons8-connect-256.icns --prune=true --out=./dist/electron-build",
+    "build-win": "ng build --prod --base-href ./ && electron-packager . f1-garo-front --overwrite --ignore=(\"e2e|node_modules|src|.browserslistrc|.editorconfig|.gitignore|angular.json|karma.conf.js|package-lock.json|README.md|tsconfig.app.json|tsconfig.json|tsconfig.spec.json|tslint.json\") --asar --platform=win32 --arch=ia32 --icon=./dist/angular-build/assets/icons8-connect-256.ico --prune=true --out=./dist/electron-build --version-string.CompanyName=SciTechEnthusiast --version-string.FileDescription=SciTechEnthusiast --version-string.ProductName=\"Demo Angular Electron app\"",
+    "build-linux": "ng build --prod --base-href ./ && electron-packager . demo-app --overwrite --ignore=(\"e2e|node_modules|src|.browserslistrc|.editorconfig|.gitignore|angular.json|karma.conf.js|package-lock.json|README.md|tsconfig.app.json|tsconfig.json|tsconfig.spec.json|tslint.json\") --asar --platform=linux --arch=x64 --icon=./dist/angular-build/assets/icons8-connect-256.png --prune=true --out=./dist/electron-build",
+    "build-winux": "ng build --prod --base-href ./ && electron-packager . demo-app --overwrite --ignore=(\"e2e|node_modules|src|.browserslistrc|.editorconfig|.gitignore|angular.json|karma.conf.js|package-lock.json|README.md|tsconfig.app.json|tsconfig.json|tsconfig.spec.json|tslint.json\") --asar --platform=win32 --arch=ia32 --icon=./dist/angular-build/assets/icons8-connect-256.ico --prune=true --out=./dist/electron-build --version-string.CompanyName=SciTechEnthusiast --version-string.FileDescription=SciTechEnthusiast --version-string.ProductName=\"Demo Angular Electron app\" && electron-packager . demo-app --overwrite --ignore=(\"e2e|node_modules|src|.browserslistrc|.editorconfig|.gitignore|angular.json|karma.conf.js|package-lock.json|README.md|tsconfig.app.json|tsconfig.json|tsconfig.spec.json|tslint.json\") --asar --platform=linux --arch=x64 --icon=./dist/angular-build/assets/icons8-connect-256.png --prune=true --out=./dist/electron-build"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +30,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@ngxs/logger-plugin": "^3.7.3",
+    "@ngxs/storage-plugin": "^3.7.3",
     "@ngxs/store": "^3.7.3",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
@@ -54,6 +63,8 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "lint-staged": "latest",
     "prettier": "^2.5.1",
+    "electron": "^16.0.7",
+    "electron-packager": "^15.4.0",
     "tslint-config-prettier": "latest",
     "typescript": "~4.5.2"
   },
